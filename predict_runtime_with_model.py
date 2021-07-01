@@ -1,21 +1,11 @@
 import argparse
 import scipy
-from sklearn.externals import joblib
+import joblib
 
 import pandas as pd
-
-from sklearn import preprocessing
-from sklearn_pandas import gen_features
-from sklearn_pandas import DataFrameMapper
-
-from sklearn import ensemble
 import sklearn
 import numpy as np
 from matplotlib import pyplot as plt
-
-from preprocessing import ChooseFeatureColumns
-from preprocessing import MyMapper
-
 
 
 class PredictRuntime(object):
@@ -78,9 +68,6 @@ class PredictRuntime(object):
         if (self.args.plot_outfile != None) and ('labels' in cq):
             plt.figure(figsize=(10,10))
             plt.scatter(cq["labels"],cq["pred"])
-            # plt.xlim([0,cq["labels"].max()])
-            # plt.ylim([0,cq["labels"].max()])
-            # plt.plot([0,cq["labels"].max()],[0,cq["labels"].max()], 'r')
             plt.xlabel("Real Runtime")
             plt.ylabel("Predicted Runtime")
             plt.title("Mean predictions")

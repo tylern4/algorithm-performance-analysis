@@ -87,7 +87,7 @@ class ChooseFeatureColumns():
         self.fit(X)
         return self.transform(X)
 
-class MyMapper():
+class MyMapper:
     def __init__(self):
         pass
         
